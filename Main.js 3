@@ -1,0 +1,90 @@
+// the start :D 
+const food = [' Burgers $5.00' , ' Fries $3.00 ' , ' Hot Wings $6.00']; //food and price
+const drink = ['Vess Soda $1.00' , 'Shake $4.00']; //drinks and prices
+/*console.log("Here's the food on the menu:" + food)
+console.log("Here's the drinks we have on the menu:" + drink)*/ //replacing this with the code above for now.
+const Welcome = () => {
+    console.log("Welcome! What would you like to order?");
+}; // was curious if this was better than just having a console log but a variable + identifier
+Welcome();
+
+food.forEach(food => console.log('We have food items:' + food )); //display food items
+drink.forEach(drink => console.log('We have these drinks: ' + drink )); //display drink items
+
+
+/*
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+ 
+readline.question('How many Burgers do you want? ', answer => {
+  console.log(`You have this many Burgers : ${answer}`);
+  console.log( '$'+ (answer * 5) + ".00") 
+  readline.close();
+});
+
+
+readline.question('Do you want fries? ', subanswer => {
+  console.log(`You have this many Burgers : ${subanswer}`);
+  console.log( '$'+ (subanswer * 3) + ".00") 
+  readline.close();
+}); */
+
+const answer1 = 5.00
+const answer2 = 3.00
+const readline = require('readline');
+
+const Burgers = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+Burgers.question('How many burgers do you want?', (answer1) => {
+    Burgers.question('Do you want fries with that?', (answer2) => {
+      let result = ( "$" + (answer1) * (answer2)  + ".00");
+       console.log(`Your total comes to ${result}`);
+         result = (+answer1) + (+answer2);
+        console.log("Your order number is " + (Math.floor(Math.random() * 100)));
+        console.log("Thank you and come again!");
+       Burgers.close();
+    });
+});
+// this is to ask for burgers with fries currently there's a small problem with it but with some closely examining will be fixed 
+
+/*if whatelse.question('Anything else? ', yes => {
+  console.log(`Please say yes or no. : ${yes}`);
+  whatelse.close();
+});  {
+  yes 
+  return order.question
+};
+else whatelse.question('Anything else? ', yes => {
+  console.log(`You have this many Burgers : ${yes}`);
+  whatelse.close(); {
+return total
+} // test code for if then to allow the user to go back and forth but
+
+// might be better to make an option 1-7 of what they want then loop back just an idea.
+
+
+
+
+
+// the other way i wanted to display the menu im not sure which is more better but love to always give more options!
+
+//const total = (answer)
+/*if (1) {
+    math.random(5.00 +(Burgers));
+    print:"5.00$"
+} else if (3)  
+ {
+    math.random(3.00 + (Fries));
+    print:"3.00$"
+ }
+ else if (6)
+{
+    math.random(6.00 +(Wings));
+    print:"6.00$"
+} //if the user chooses between 1,3 or 6 it should do the right amount and add if they add another
+*/ // this older now and most likely getting replaced by the input and output of line 19 
